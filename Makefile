@@ -1,6 +1,11 @@
 export V ?= 0
 
+
+ifeq ($O,)
 OUTPUT_DIR := $(CURDIR)/out
+else
+OUTPUT_DIR := $(O)
+endif
 
 EXAMPLE_LIST := $(subst /,,$(dir $(wildcard */Makefile)))
 
